@@ -14,8 +14,8 @@ if (!isset($_REQUEST['code'])) {
 	return;
 }
 $apiType = 1;
-if (isset($_REQUEST['api_type'])) {
-	$apiType = int($_REQUEST['api_type']);
+if (isset($_REQUEST['apitype'])) {
+	$apiType = int($_REQUEST['apitype']);
 }
 
 $fundCode = $_REQUEST['code'];

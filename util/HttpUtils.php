@@ -69,7 +69,7 @@ class HttpUtils {
 		return $data;
 	}
 
-	static public function curl($url, $params = null, $refer = null, $method_type = 'POST') {
+	static public function fakeCurl($url, $params = null, $refer = null, $method_type = 'POST') {
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		if (!is_null($refer)) {
@@ -118,10 +118,10 @@ class HttpUtils {
 	}
 
 	static public function post($url, $params = null, $refer = null) {
-		return self::curl($url, $params, $refer, 'POST');
+		return self::fakeCurl($url, $params, $refer, 'POST');
 	}
 
 	static public function get($url, $params = null, $refer = null) {
-		return self::curl($url, $params, $refer, 'GET');
+		return self::fakeCurl($url, $params, $refer, 'GET');
 	}
 }

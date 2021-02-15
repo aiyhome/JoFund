@@ -12,8 +12,8 @@ if (!isset($_REQUEST['code'])) {
 	return;
 }
 $apiType = 3;
-if (isset($_REQUEST['api_type'])) {
-	$apiType = int($_REQUEST['api_type']);
+if (isset($_REQUEST['apitype'])) {
+	$apiType = intval($_REQUEST['apitype']);
 }
 
 $fundCode = $_REQUEST['code'];
@@ -77,7 +77,7 @@ if (1 == $apiType) {
 			'MobileKey' => $deviceId . '%7C%7Ciemi_tluafed_me',
 		);
 		$ret = HttpUtils::post($url, $params);
-		var_dump($ret);
+		// var_dump($ret);
 		$data = json_decode($ret);
 		if ($data->Datas != NULL) {
 			echo json_encode(array(
