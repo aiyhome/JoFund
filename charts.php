@@ -22,8 +22,10 @@ $url2 = sprintf('https://image.sinajs.cn/newchart/v5/fund/nav/ss/%s.gif?v=%s', $
 // 爱基金 详情页面
 // $detailUrl = sprintf('https://fund.10jqka.com.cn/public/ifundout/dist/detail.html#/%s', $fundCode);
 // 天天基金 详情页面
-$detailUrl = sprintf('https://h5.1234567.com.cn/app/fund-details/?fCode=%s', $fundCode);
+// $detailUrl = sprintf('https://h5.1234567.com.cn/app/fund-details/?fCode=%s', $fundCode);
 
+// 雪球旗下蛋卷基金 详情页面
+$detailUrl = sprintf('https://danjuanapp.com/funding/%s?channel=1300100141', $fundCode);
 echo json_encode(array(
 	'code' => 0,
 	'msg' => 'success',
