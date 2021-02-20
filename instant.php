@@ -4,6 +4,7 @@
 include_once __DIR__ . '/util/HttpUtils.php';
 include_once __DIR__ . '/util/Utils.php';
 
+// $_REQUEST['code'] = '161725';
 if (!isset($_REQUEST['code'])) {
 	echo json_encode(array(
 		'code' => 2,
@@ -11,7 +12,7 @@ if (!isset($_REQUEST['code'])) {
 	));
 	return;
 }
-$apiType = 3;
+// $apiType = 1;
 if (isset($_REQUEST['apitype'])) {
 	$apiType = intval($_REQUEST['apitype']);
 }
@@ -23,7 +24,7 @@ if (1 == $apiType) {
 	$url = sprintf('http://fundgz.1234567.com.cn/js/%s.js?v=%s', $fundCode, $timestamp);
 	$refer = 'fund.eastmoney.com';
 	$params = null;
-	$ret = HttpUtils::post($url, $params, $refer);
+	$ret = HttpUtils::get($url, $params, $refer);
 	$data = Utils::jsonpDecode($ret);
 	if (NULL == $data) {
 		echo json_encode(array(
